@@ -1,0 +1,14 @@
+<div style="width:80%;margin:-8px 10% -8px 10%;">
+	<div style="width:90%;margin:10px 5% 10px 5%;float:left;background:#F1E1AB; border:1px solid grey;">
+		<% @products.each do |p| %>
+			<div style="width:300px;float:left;background:#FFF;border:1px solid grey;margin:5px 5px 5px 10px">
+				<div><%= link_to(image_tag(p.avatar.url(:medium), :height=>"200", :width=> "300"), product_path(p))%></div>
+				<div style="padding:10px;"><%=  p.name%> </div>
+				<div style="width:280px;float:left;padding:10px;">
+					<div style="width:140px;float:left;"><span>Price: </span><%=  p.price%> </div>
+					<div style="width:140px;float:right;"><span>Color: </span><%=  p.color%> </div>
+				</div>
+			</div>		
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+<% p = @product %>
+<div style="width:300px;float:left;background:#FFF;border:1px solid grey;margin:5px 5px 5px 10px">
+	<div><%= image_tag(p.avatar.url(:medium), :height=>"200", :width=> "300")%></div>
+	<div style="padding:10px;"><%=  p.name%> </div>
+	<div style="width:280px;float:left;padding:10px;">
+		<div style="width:140px;float:left;"><span>Price: </span><%=  p.price%> </div>
+		<div style="width:140px;float:right;"><span>Color: </span><%=  p.color%> </div>
+	</div>
+
+	<%= link_to "Add to cart", add_to_cart_path(:id=>p.id)%>
+</div>	

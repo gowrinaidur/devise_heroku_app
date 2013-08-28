@@ -1,0 +1,42 @@
+<script>
+	$(document).ready(function(){
+
+		$('.delete-multiple').click(function(){
+			console.log($(this))
+			var allVals = [];
+		     $('.chk:checked').each(function() {
+		       allVals.push($(this).val());
+		     });
+			
+			window.location= "http://localhost:3000/delete_session_products?product_ids="+allVals;
+			
+		});
+	})
+</script>
+<style>
+	.odd{background: grey;}
+	.even{background: #fff;}
+</style>
+<%= link_to "Delete", "javascript:void(0)", :class=>"delete-multiple"%>
+<table style="width:60%;margin:10px 5% 10px 5%;float:left;background:#F1E1AB; border:1px solid grey;">
+	<tr>
+		<th width="5%"><%= check_box_tag "session_product_chk_all", "", false %></th>
+		<th width="35%">Product Image</th>
+		<th width="20%">Name</th>
+		<th width="20%">Color</th>
+		<th width="20%">Price</th>		
+	</tr>
+	<tr>
+		<td colspan="5" style="background:grey"></td>
+	</tr>
+	<% @products.each do |p|%>
+		<tr class="<%= cycle('even','odd')%>">
+			<td style="text-align:center;"><%= check_box_tag "session_products[]", p.id, false, :class => 'chk' %></td>
+			<td style="text-align:center;"><%= image_tag p.avatar.url(:thumb), :height=>"100", :width=> "100" %></td>
+			<td style="text-align:center;"><%= p.name%></td>
+			<td style="text-align:center;"><%= p.color%></td>
+			<td style="text-align:center;"><%= p.price%></td>
+		</tr>
+	<% end %>
+
+</table>
