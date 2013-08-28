@@ -11,10 +11,25 @@ class User < ActiveRecord::Base
   has_many :categories
   # attr_accessible :title, :body
 
-  def self.find_for_omniauth_oauth(auth, signed_in_resource=nil)
+  	
+  	def self.find_for_omniauth_oauth(auth, signed_in_resource=nil)
 	  user = User.where(:provider => auth.provider, :uid => auth.uid).first
 	  unless user
 	    user = User.create(name:auth.extra.raw_info.name,
+	                         provider:auth.provider,
+	                         uid:auth.uid,
+	                         email:auth.info.email,
+	                         password:Devise.friendly_token[0,20],
+	                         role: 3
+	                         )
+	  end
+	  user
+	end
+
+	def self.find_for_linkedin_omniauth_oauth(auth, signed_in_resource=nil)
+	  user = User.where(:provider => auth.provider, :uid => auth.uid).first
+	  unless user
+	    user = User.create(name:auth.info.name,
 	                         provider:auth.provider,
 	                         uid:auth.uid,
 	                         email:auth.info.email,

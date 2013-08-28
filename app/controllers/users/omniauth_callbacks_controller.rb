@@ -15,8 +15,8 @@ class Users::OmniauthCallbacksController < ApplicationController
 	end
 
 	def linkedin
-		auth = request.env["omniauth.auth"]		
-		@user = User.find_for_omniauth_oauth(request.env["omniauth.auth"], current_user)
+		auth = request.env["omniauth.auth"]				
+		@user = User.find_for_linkedin_omniauth_oauth(request.env["omniauth.auth"], current_user)
 
 	    if @user.persisted?
 	      @user.skip_confirmation!
