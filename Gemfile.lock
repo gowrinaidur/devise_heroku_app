@@ -66,6 +66,7 @@ GEM
       railties (~> 3.1)
       warden (~> 1.1.1)
     erubis (2.7.0)
+    excon (0.25.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.7.6)
@@ -79,6 +80,14 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (1.2.0)
+    heroku (2.40.0)
+      heroku-api (~> 0.3.7)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.7)
+      rest-client (~> 1.6.1)
+      rubyzip
+    heroku-api (0.3.15)
+      excon (~> 0.25.1)
     hike (1.2.3)
     i18n (0.6.1)
     inherited_resources (1.4.1)
@@ -92,6 +101,8 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.1.0)
+      addressable (~> 2.2.6)
     libv8 (3.11.8.17)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -105,6 +116,7 @@ GEM
     multi_json (1.7.9)
     multipart-post (1.1.5)
     mysql2 (0.3.13)
+    netrc (0.7.7)
     oauth (0.4.7)
     oauth2 (0.5.2)
       faraday (~> 0.7)
@@ -163,6 +175,9 @@ GEM
     ref (1.0.4)
     responders (1.0.0.rc)
       railties (>= 3.2, < 5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rubyzip (0.9.9)
     sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -196,6 +211,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   execjs
+  heroku
   jquery-rails (= 2.3.0)
   mysql2
   omniauth
