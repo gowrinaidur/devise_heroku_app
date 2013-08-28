@@ -211,9 +211,23 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  config.omniauth :facebook, '623973794310061', '1f6020dba0101e19cf19df4d0113f733'#, :scope => 'user,public_repo'
-  config.omniauth :linkedin, 'tzetnx7q3zcd','pW2F85acuro7Bcd5',:scope => 'r_fullprofile r_emailaddress r_network'
-  config.omniauth :google_oauth2,'1049227669081.apps.googleusercontent.com','pqmqjgwpl5_7XmoiPJnaWKbl',
+  
+  #The below keys for localhost:3000 (Sample Omniauth)
+  # config.omniauth :facebook, '623973794310061', '1f6020dba0101e19cf19df4d0113f733'#, :scope => 'user,public_repo'
+  # config.omniauth :linkedin, 'tzetnx7q3zcd','pW2F85acuro7Bcd5',:scope => 'r_fullprofile r_emailaddress r_network'
+  # config.omniauth :google_oauth2,'1049227669081.apps.googleusercontent.com','pqmqjgwpl5_7XmoiPJnaWKbl',
+  #   {
+  #     :name => "google",
+  #     :scope => "userinfo.email, userinfo.profile, plus.me, http://gdata.youtube.com",
+  #     :prompt => "select_account",
+  #     :image_aspect_ratio => "square",
+  #     :image_size => 50
+  #   }
+
+  #The below keys for heroku app keys: (http://lit-tundra-1949.herokuapp.com/)
+  config.omniauth :facebook, '491049497646091', 'bde5c520c221527412a1da0557f5c4c3'#, :scope => 'user,public_repo'
+  config.omniauth :linkedin, 'jpi7ozm0pz2y','r1CIVhvbMqhmh2NJ',:scope => 'r_fullprofile r_emailaddress r_network'
+  config.omniauth :google_oauth2,'187555593753.apps.googleusercontent.com','51akA0nA0ZbiouB5BNIkkCu3',
     {
       :name => "google",
       :scope => "userinfo.email, userinfo.profile, plus.me, http://gdata.youtube.com",
